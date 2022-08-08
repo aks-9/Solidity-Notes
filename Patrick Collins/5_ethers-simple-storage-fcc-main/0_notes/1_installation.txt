@@ -1,0 +1,21 @@
+1.Solidity + Hardhat extenstion from Nomic Foundation.
+
+2.In the settings.json file add the following:
+
+"[solidity]": {
+    "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
+  }
+
+3. In the user settings,
+
+check the format on save option.
+
+
+4. Add prettier extenstion for javascript formatting.
+"[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+5. Add yarn to your system:
+https://bobbyhadz.com/blog/not-recognized-as-internal-or-external-command-yarn
+
