@@ -1,0 +1,27 @@
+//* The hardhat console.
+
+/* 
+
+It is a way to interact with the blockchain without writing any scripts. We can directly write  the JavaScript commands in the terminal to interact. You can run it by:
+
+yarn hardhat console --network networkName
+
+Then you will be able to write JavaScript commands directly in terminal.
+
+Welcome to Node.js v16.14.0.      
+Type ".help" for more information.
+>
+
+> const SimpleStorageFactory = await ethers.getContractFactory('SimpleStorage');
+undefined
+> const simpleStorage = await SimpleStorageFactory.deploy();
+undefined
+> const currentValue = await simpleStorage.retrieve();
+undefined
+> currentValue
+BigNumber { value: "0" }
+
+
+*/
+
+
