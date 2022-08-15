@@ -1,0 +1,32 @@
+// Adding Scripts to your 'package.json'
+
+// Scripts allows us to run longer cli commands via short cuts defined in the scripts section.
+
+{
+  "name": "hardhat-fundme",
+  "author": "aks",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@chainlink/contracts": "^0.3.1",
+    "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers",
+    "@nomiclabs/hardhat-etherscan": "^3.0.0",
+    "@nomiclabs/hardhat-waffle": "^2.0.2",
+    "chai": "^4.3.4",
+    "dotenv": "^14.2.0",
+    "ethereum-waffle": "^3.4.0",
+    "ethers": "^5.6.9",
+    "hardhat": "^2.8.3",
+    "hardhat-deploy": "^0.11.12",
+    "hardhat-gas-reporter": "^1.0.7",
+    "prettier-plugin-solidity": "^1.0.0-beta.19",
+    "solidity-coverage": "^0.7.18"
+  },
+  "scripts": {
+    "test": "yarn hardhat test",   // Now we can just run 'yarn test'
+    "test:staging": "yarn hardhat test --network rinkeby",
+    "lint": "solhint 'contracts/*.sol'",
+    "lint:fix": "solhint 'contracts/**/*.sol' --fix", //autofix for solhint
+    "format": "prettier --write .", // Now we can just run 'yarn format'
+    "coverage": "hardhat coverage" // Now we can just run 'yarn coverage'
+  }
+}
