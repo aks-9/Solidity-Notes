@@ -1,0 +1,41 @@
+<!-- Connecting HTML to Metamask -->
+
+<!-- This is 'index.html' file -->
+
+<!-- We will check if the 'window.ethereum' object is undefined or not -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Fund Me App</title>
+  </head>
+  <body>
+    Hello!
+    <script>
+      // Here we can write JavaScript!
+      console.log('This is javascript');
+      // Go to the browser and press ctrl+shift+J to open the console, and you will find this console.log printed there.
+
+      async function connect() {
+        //Checking if we have Metamask installed or not.
+        if (typeof window.ethereum !== undefined) {
+          console.log('Metamask is installed');
+
+          //connecting to Metamask
+          await window.ethereum.request({ method: 'eth_requestAccounts' }); // This will pop a Metamask window and ask for connection every time we hit refresh. So we'll wrap this 'if-else block' in an 'async' function.
+
+          console.log('connected to Metamask');
+
+          //updating the text in the connect button
+          document.getElementById('connectButton').innerHTML = 'Connected!';
+        } else {
+          console.log('Metamask not installed...');
+          document.getElementById('connectButton').innerHTML = 'Please install Metamask!';
+        }
+      }
+    </script>
+
+    <!-- Adding a button to connect to Metamask -->
+    <button id="connectButton" onclick="connect()">Connect</button>
+  </body>
+</html>
