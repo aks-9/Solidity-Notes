@@ -1,0 +1,13 @@
+/* 
+* 35. Tailwind and Styling- 2
+
+This is 'frontend/styles/globals.css' file.
+
+Go to 'frontend/styles/globals.css' file and overwrite the original code with the following:
+
+
+Also Install PostCSS Language Support from the VS Code extensions to fix any formatting errors in this file.
+*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
