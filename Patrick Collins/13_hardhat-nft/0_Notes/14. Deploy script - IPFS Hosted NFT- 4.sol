@@ -73,5 +73,4 @@ OUTPUT:
 Compiled 3 Solidity files successfully
 Done in 35.38s.
 
-//* The hash of images will be showing in Pinata dashboard now
 */
