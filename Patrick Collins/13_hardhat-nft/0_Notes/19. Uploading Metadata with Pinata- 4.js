@@ -174,7 +174,7 @@ Done in 19.31s.
 
 * We can copy the array and paste it in 'tokenUris', and now since we've updated the 'tokenUris', we'll use them instead of uploading again.
 
-* We can copy them fro the output and paste them in the 'tokenUris' array, and move it outside the async function to be globally available.
+* We can copy them from the output and paste them in the 'tokenUris' array, and move it outside the async function to be globally available.
 
 
 */
