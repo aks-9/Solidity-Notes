@@ -4,7 +4,7 @@
 
 //* Setting the NFT image
 
-// In the ERC721, we have to override the 'tokenURI' function and set the token's URI ourselves. But we can also use 'ERC721URIStorage' contract from OpenZeppelin, which inherits from ERC721 and give us a function '_setTokenURI' to do the same thing eaisily.
+// In the ERC721, we have to override the 'tokenURI' function and set the token's URI ourselves. But we can also use 'ERC721URIStorage' contract from OpenZeppelin, which inherits from ERC721 and additinally give us a function '_setTokenURI' to do the same thing much easily.
 
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.7;
@@ -17,7 +17,7 @@ import '@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol'; /
 // Custom errors
 error RandomIpfsNft__RangeOutOfBounds();
 
-// inheriting from ERC721URIStorage instead of ERC721, but we can still use the constructor of ERC721 as ERC721URIStorage also inherits from ERC721.
+// inheriting from 'ERC721URIStorage' instead of 'ERC721', but we can still use the constructor of 'ERC721', as 'ERC721URIStorage' also inherits from 'ERC721'.
 contract RandomIpfsNft is VRFConsumerBaseV2, ERC721URIStorage {
     // Types
     enum Breed {
@@ -40,7 +40,7 @@ contract RandomIpfsNft is VRFConsumerBaseV2, ERC721URIStorage {
     // NFT Variable
     uint256 private s_tokenCounter;
     uint256 internal constant MAX_CHANCE_VALUE = 100;
-    string[] internal s_dogTokenUris; // adding. Each element of this array holds the URIs of all the tokens as a string. Each URI will point to Metadata of a token, from where we can get the respective 'image'. We can update the image of the NFT after deployment, by updating this.
+    string[] internal s_dogTokenUris; // adding. Each element of this array holds the URI of each of the tokens, as a string. Each URI will point to Metadata of a token, from where we can get the respective 'image' URI. We can update the image of the NFT after deployment, by updating this.
 
     constructor(
         address vrfCoordinatorV2,
