@@ -10,13 +10,14 @@ pragma solidity ^0.8.7;
 
 import '@openzeppelin/contracts/token/ERC721/ERC721.sol'; //importing
 
-// Inheriting from ERC721, whose constructor takes a 'name' and a 'symbol'.
+// Inheriting from ERC721.
 contract BasicNft is ERC721 {
     string public constant TOKEN_URI =
         'ipfs://bafybeig37ioir76s7mg5oobetncojcm3c3hxasyd4rvid4jqhy4gkaheg4/?filename=0-PUG.json'; // Token URI from IPFS. This returns a JSON object, which is Metadata for our NFT, and in that metadata we have our image URI to points to the image of the NFT.
 
     uint256 private s_tokenCounter; // to count token ID
 
+    // ERC721 constructor takes a 'name' and a 'symbol'.
     constructor() ERC721('Dogie', 'DOG') {
         s_tokenCounter = 0;
     }
