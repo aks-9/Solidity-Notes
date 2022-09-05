@@ -83,7 +83,7 @@ async function handleTokenUris() {
         ); //populating the 'name' element of our metadata, with the name of the file at 'imageUploadResponseIndex', and replacing the extention of the filename with an empty string.
 
         tokenUriMetadata.description = `An adorable ${tokenUriMetadata.name} pup!`; // populating the 'description' element
-        tokenUriMetadata.image = `ipfs://${imageUploadResponses[imageUploadResponseIndex].IpfsHash}`; // populating the 'image' element with IPFS hash that we get from the 'imageUploadResponses' array at the index 'imageUploadResponseIndex'. The function we has called to get the response is 'pinFileToIPFS', which returns a 'IpfsHash' in the 'response'.
+        tokenUriMetadata.image = `ipfs://${imageUploadResponses[imageUploadResponseIndex].IpfsHash}`; // populating the 'image' element with IPFS hash that we get from the 'imageUploadResponses' array at the index 'imageUploadResponseIndex'. The function we had called to get the response is 'pinFileToIPFS', which returns a 'IpfsHash' in the 'response'.
 
         console.log(`Uploading ${tokenUriMetadata.name}...`);
 
