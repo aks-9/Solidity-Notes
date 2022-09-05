@@ -7,7 +7,7 @@
 //* Whenever we mint an NFT, we will trigger an Chainlink VRF call to get a random number. Using this random number, we will get a random NFT. The NFT is going to be one of these:
 //? Pug (super rare), Shiba ( medium rare), St. Bernard(pretty common).
 
-//* Users have to pay to mint the NFT.abi
+//* Users have to pay to mint the NFT.
 //* The owner of the contract can withdraw the ETH.
 
 // install @chainlink/contracts: yarn add --dev @chainlink/contracts
