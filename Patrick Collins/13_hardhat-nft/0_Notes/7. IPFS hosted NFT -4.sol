@@ -83,7 +83,7 @@ contract RandomIpfsNft is VRFConsumerBaseV2, ERC721 {
     {
         uint256[3] memory chanceArray = getChanceArray(); // getting the chance array. Notice we'd to define an array of exact same size in memory.
 
-        uint256 cumulativeSum = 0;
+        uint256 cumulativeSum = 0; // letting it to be 0
 
         for (uint256 i = 0; i < chanceArray.length; i++) {
             if (moddedRng >= cumulativeSum && moddedRng < chanceArray[i]) {
@@ -93,19 +93,21 @@ contract RandomIpfsNft is VRFConsumerBaseV2, ERC721 {
             cumulativeSum = chanceArray[i];
 
             /*
-            This is a cleverly written code. Need to focus.
+            * This is a cleverly written code. Need to focus.
 
             Let's say our 'moddedRng' is 25. It is less than 30, which means that our dog breed should be a SHIBA, as shiba has a 30% chance.
 
             
             When the loop runs for the first time, index 'i' is equal to '0', and at zeroth index of 'chanceArray' is 10
 
-            So in the 'if' statement, 25 >= 0 and 25 < 10, which will be false, as 25 is not less than 10. So we will skip the 'if' block now.
+            So in the 'if' statement, 25 >= 0 and 25 < 10, 
+            which will be false, as 25 is not less than 10. So we will skip the 'if' block now.
 
             Now we'll set the 'cumulativeSum' equal to 10.
 
-            Loop runs again, with i=1. So the first index of 'chanceArray' is 30
-            25 > 10 and 25 < 30, this will be true, and we'll get our Breed, which will be the enum at the the first index, which is a SHIBA.
+            Loop runs again, with i=1. So now the '1' index of 'chanceArray' is 30.
+            So in the 'if' statement, 25 > 10 and 25 < 30, 
+            this will be true, and we'll get our Breed, which will be the enum at the the first index, which is a SHIBA.
             
             
             * Now we can go to 'fulfillRandomWords' function and call this function from there.
