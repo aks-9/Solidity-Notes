@@ -8,7 +8,7 @@ const { getNamedAccounts, deployments, network, ethers } = require('hardhat');
 const { developmentChains } = require('../helper-hardhat-config.js');
 
 const BASE_FEE = ethers.utils.parseEther('0.25'); // 0.25 is this the premium. It costs this much per request.
-const GAS_PRICE_LINK = 1e9; // 1 * 10 rasie to power 9 //Link per gas
+const GAS_PRICE_LINK = 1e9; // 1 * 10 raised to power 9 //Link per gas
 
 module.exports = async ({ getNamedAccounts, deployments }) => {
     const { deploy, log } = deployments;
