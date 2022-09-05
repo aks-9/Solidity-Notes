@@ -41,6 +41,6 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
         networkConfig[chainId]['gasLane'],
         networkConfig[chainId]['mintFee'],
         networkConfig[chainId]['callbackGasLimit'],
-        // tokenUris,
+        // tokenUris, // We don't have this right now. For this, we need to upload the images to Pinata/ IPFS, and then update the Metadata, which we will do in the next lesson.
     ];
 };
