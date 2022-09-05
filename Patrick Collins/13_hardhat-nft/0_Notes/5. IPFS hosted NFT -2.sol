@@ -37,9 +37,9 @@ contract RandomIpfsNft is VRFConsumerBaseV2, ERC721 {
         i_callbackGasLimit = callbackGasLimit;
     }
 
-    // People who call this 'requestNft' function will own the NFT. But this will trigger a random number request with a 'requestId', and then the Chainlink node will call our 'fulfillRandomWords' function and give us the random number along with 'requestId'.
+    // People who call our 'requestNft' function will own the NFT. But this will trigger a random number request with a 'requestId', and then the Chainlink node will call our 'fulfillRandomWords' function and give us the random number along with 'requestId'.
 
-    // But the 'safeMint' function takes 'msg.sender' as one of its arguments, so if we mind the NFT in the 'fulfillRandomWords' after we've got the random number, then the owner will be the Chainlink node and not the person who called 'requestNft'.
+    // But to mint an NFT, the 'safeMint' function takes 'msg.sender' as one of its arguments, so if we mint the NFT in the 'fulfillRandomWords' after we've got the random number, then the owner will be the Chainlink node and not the person who called 'requestNft'.
 
     // So we must to create a mapping between the 'requestId' and the person who called this 'requestNft' function and requested a random number in order to get an NFT. This mapping will be used to pass the address of the person who called 'requestNft' function, to the 'safeMint' function.
 
@@ -58,18 +58,18 @@ contract RandomIpfsNft is VRFConsumerBaseV2, ERC721 {
             NUM_WORDS
         );
 
-        s_requestIdToSender[requestId] = msg.sender; //saving the address of the person who called this function with 'requestId' in the mapping.
+        s_requestIdToSender[requestId] = msg.sender; //saving the address of the person who called this function, with 'requestId' in the mapping.
     }
 
     function fulfillRandomWords(uint256 requestId, uint256[] memory randomWords)
         internal
         override
     {
-        address dogOwner = s_requestIdToSender[requestId]; // setting the address at the 'requestId' in the mapping as the owner of the NFT to be minted.
+        address dogOwner = s_requestIdToSender[requestId]; // getting the address at the 'requestId' in the mapping as the owner of the NFT to be minted.
 
-        uint256 newTokenId = s_tokenCounter; // setting the token ID for NFT.abi
+        uint256 newTokenId = s_tokenCounter; // getting the token ID for NFT
 
-        _safeMint(dogOwner, newTokenId); // function from ERC721
+        _safeMint(dogOwner, newTokenId); // function from ERC721 to mint the NFT.
     }
 
     // adding 'override', 'view' and returns(string memory)
