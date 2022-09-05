@@ -172,9 +172,9 @@ Done in 19.31s.
 
 * Now we can set the 'UPLOAD_TO_PINATA = false' in the '.env' file.
 
-* We can copy the array and paste it in 'tokenUris', and now since we've update the 'tokenUris', we'll use them instead of uploading again.
+* We can copy the array and paste it in 'tokenUris', and now since we've updated the 'tokenUris', we'll use them instead of uploading again.
 
-* Now that we've got these token URIs, we can copy them and paste them in the 'tokenUris' array, and move it outside the async function to be globally available.
+* We can copy them fro the output and paste them in the 'tokenUris' array, and move it outside the async function to be globally available.
 
 
 */
