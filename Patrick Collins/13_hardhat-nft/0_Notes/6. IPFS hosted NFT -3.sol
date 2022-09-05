@@ -2,7 +2,7 @@
 
 // This is 'RandomIpfsNft.sol' file.
 
-//* Adding rareties using a 'chance' array.
+//* Adding rarities using a 'chance' array.
 
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.7;
@@ -60,7 +60,7 @@ contract RandomIpfsNft is VRFConsumerBaseV2, ERC721 {
         _safeMint(dogOwner, newTokenId);
 
         // decide the dogbreed
-        uint256 moddedRng = randomWords[0] % MAX_CHANCE_VALUE; // whatever random number we get will be at zeroth index of the array 'randomWords'. When we use modulo operator on it with MAX_CHANCE_VALUE, the remainder will always be less than MAX_CHANCE_VALUE itself. So if MAX_CHANCE_VALUE = 100 then we'll always get a remainder less than 100. We call this remainder 'modded random number'.
+        uint256 moddedRng = randomWords[0] % MAX_CHANCE_VALUE; // whatever random number we get will be at zeroth index of the array 'randomWords'. When we use 'modulo' operator on it with MAX_CHANCE_VALUE, the remainder will always be less than MAX_CHANCE_VALUE itself. So if MAX_CHANCE_VALUE = 100 then we'll always get a remainder less than 100. We call this remainder 'modded random number'.
 
         // 7 = PUG
         // 88 = St. Bernard
